@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
  */
 /**
  *
- * @author isaac_s_souza
+ * @author 
  */
 public class Cadastro extends javax.swing.JFrame {
 
@@ -35,8 +35,6 @@ public class Cadastro extends javax.swing.JFrame {
             calconsumo novoFrame = new calconsumo(model);
             novoFrame.setVisible(true);
             this.dispose();
-            Relatório newFrame = new Relatório(model);
-
         }
 
     }
@@ -71,8 +69,6 @@ public class Cadastro extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -161,15 +157,14 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(jBVoltar);
         jBVoltar.setBounds(20, 360, 61, 23);
 
-        jLFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Downloads\\Water Systems Earth Science Presentation in Blue White Illustrated Style\\1.png")); // NOI18N
-        jLFundo.setText("jLabel6");
+        jLFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/1.png"))); // NOI18N
         getContentPane().add(jLFundo);
         jLFundo.setBounds(0, -10, 610, 420);
 
         jMenu1.setText("Cadastro");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\9133514_signup_register_login_icon (1).png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9133514_signup_register_login_icon (1).png"))); // NOI18N
         jMenuItem1.setText("Cadastro de membros");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +178,7 @@ public class Cadastro extends javax.swing.JFrame {
         jMenu2.setText("Consulta");
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\3045419_accounting_budget_calc_calculator_math_icon (1).png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/3045419_accounting_budget_calc_calculator_math_icon (1).png"))); // NOI18N
         jMenuItem2.setText("Consulta de consumo");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,10 +189,10 @@ public class Cadastro extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Relatórios");
+        jMenu3.setText("Relatório");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\5975175_coronavirus_report_clipboard_medical_virus_icon.png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"))); // NOI18N
         jMenuItem3.setText("Relatórios");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,24 +203,10 @@ public class Cadastro extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Metas");
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\290108_achievement_award_badge_medal_prize_icon.png")); // NOI18N
-        jMenuItem4.setText("Metas");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu4);
-
         jMenu5.setText("Sobre");
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\4213426_about_description_help_info_information_icon.png")); // NOI18N
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/4213426_about_description_help_info_information_icon.png"))); // NOI18N
         jMenuItem5.setText("Sobre");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,13 +228,8 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jBVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVoltarActionPerformed
         // TODO add your handling code here:
-        new Menu(model).show();
-        this.dispose();
+        new Menu().show();
     }//GEN-LAST:event_jBVoltarActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
@@ -268,7 +244,7 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        new Relatório().show();
+       
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -324,13 +300,11 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

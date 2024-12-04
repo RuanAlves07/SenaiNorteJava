@@ -60,8 +60,6 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -98,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setBounds(160, 10, 260, 61);
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\4213426_about_description_help_info_information_icon.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/4213426_about_description_help_info_information_icon.png"))); // NOI18N
         jButton1.setText("Sobre");
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +108,7 @@ public class Menu extends javax.swing.JFrame {
         jButton1.setBounds(320, 150, 117, 37);
 
         jBRelatorio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jBRelatorio.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\5975175_coronavirus_report_clipboard_medical_virus_icon.png")); // NOI18N
+        jBRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"))); // NOI18N
         jBRelatorio.setText("Relatórios");
         jBRelatorio.setContentAreaFilled(false);
         jBRelatorio.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +120,7 @@ public class Menu extends javax.swing.JFrame {
         jBRelatorio.setBounds(10, 146, 159, 37);
 
         jBCalc.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jBCalc.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\3045419_accounting_budget_calc_calculator_math_icon (1).png")); // NOI18N
+        jBCalc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/3045419_accounting_budget_calc_calculator_math_icon (1).png"))); // NOI18N
         jBCalc.setText("Consulta de Consumo");
         jBCalc.setBorder(null);
         jBCalc.setBorderPainted(false);
@@ -136,7 +134,7 @@ public class Menu extends javax.swing.JFrame {
         jBCalc.setBounds(310, 110, 310, 29);
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\9133514_signup_register_login_icon (1).png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9133514_signup_register_login_icon (1).png"))); // NOI18N
         jButton2.setText("Cadastro de membro");
         jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -147,15 +145,14 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.add(jButton2);
         jButton2.setBounds(10, 103, 279, 37);
 
-        jLFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Downloads\\Water Systems Earth Science Presentation in Blue White Illustrated Style\\1.png")); // NOI18N
-        jLFundo.setText("jLabel2");
+        jLFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/1.png"))); // NOI18N
         jPanel2.add(jLFundo);
         jLFundo.setBounds(0, -30, 600, 470);
 
         jMenu2.setText("Cadastro");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\9133514_signup_register_login_icon (1).png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9133514_signup_register_login_icon (1).png"))); // NOI18N
         jMenuItem1.setText("Cadastro de membros");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,7 +166,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.setText("Consulta");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\3045419_accounting_budget_calc_calculator_math_icon (1).png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/3045419_accounting_budget_calc_calculator_math_icon (1).png"))); // NOI18N
         jMenuItem3.setText("Consulta de Consumo");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +180,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu5.setText("Relatório");
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\5975175_coronavirus_report_clipboard_medical_virus_icon.png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"))); // NOI18N
         jMenuItem2.setText("Relatórios");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,19 +191,10 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu4.setText("Metas");
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\290108_achievement_award_badge_medal_prize_icon.png")); // NOI18N
-        jMenuItem4.setText("Metas");
-        jMenu4.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu4);
-
         jMenu6.setText("Sobre");
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\4213426_about_description_help_info_information_icon.png")); // NOI18N
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/4213426_about_description_help_info_information_icon.png"))); // NOI18N
         jMenuItem5.setText("Sobre");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,6 +223,22 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+   public void abadeerro(){
+                  // Exibir mensagem em um JOptionPane
+    int opcao = javax.swing.JOptionPane.showConfirmDialog(
+        this,
+        "Você não tem nenhum membro cadastrado, por favor cadastre um membro.\nDeseja abrir a tela de cadastro agora?",
+        "Aviso",
+        javax.swing.JOptionPane.YES_NO_OPTION,
+        javax.swing.JOptionPane.INFORMATION_MESSAGE
+    );
+    
+    // Se o usuário clicar em "Sim", abrir a tela de cadastro
+    if (opcao == javax.swing.JOptionPane.YES_OPTION) {
+        new Cadastro().show();
+    }
+  } 
+    
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         new calconsumo().show();
@@ -242,7 +246,6 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        new Relatório().show();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -257,12 +260,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void jBCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCalcActionPerformed
         // TODO add your handling code here:
-        new calconsumo().show();
+       abadeerro();
     }//GEN-LAST:event_jBCalcActionPerformed
 
     private void jBRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRelatorioActionPerformed
         // TODO add your handling code here:
-        new Relatório().show();
+        abadeerro();
     }//GEN-LAST:event_jBRelatorioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -318,14 +321,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

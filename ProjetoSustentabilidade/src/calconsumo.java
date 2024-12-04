@@ -22,6 +22,8 @@ public class calconsumo extends javax.swing.JFrame {
      */
     public calconsumo(DefaultTableModel model) {
         initComponents();
+        double custo;
+        double tempoStr;
         DefaultTableModel novoModel = (DefaultTableModel) jTable2.getModel();
 
         for (int i = 0; i < model.getRowCount(); i++) {
@@ -32,11 +34,16 @@ public class calconsumo extends javax.swing.JFrame {
 
             });
             jcmembro.addItem(model.getValueAt(i, 0).toString());
+
         }
 
     }
 
     calconsumo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    calconsumo(String a) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -56,12 +63,10 @@ public class calconsumo extends javax.swing.JFrame {
     }
 
     public void passar_info() {
-        String nome =  (String) jcmembro.getSelectedItem();
+        String nome = (String) jcmembro.getSelectedItem();
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
         model.addRow(new Object[]{nome});
-        Relatório newFrame = new Relatório(model);
-        newFrame.setVisible(true);
-        
+
     }
 
     public void cadastro_dispo() {
@@ -125,7 +130,7 @@ public class calconsumo extends javax.swing.JFrame {
 
             // add os dados na tabela 
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            model.addRow(new Object[]{membro, dispositivo, local, tempoStr + " Min", "R$" + custo, volume});
+            model.addRow(new Object[]{membro, dispositivo, local, tempoStr + "Min", "R$" + custo, volume});
 
         } catch (NumberFormatException e) {
             // Caso o usuário insira um valor inválido para o tempo
@@ -216,6 +221,47 @@ public class calconsumo extends javax.swing.JFrame {
 
     }
 
+void gerarelatorio() {
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    int selectedRow = jTable1.getSelectedRow(); 
+
+    if (selectedRow == -1) {
+        JOptionPane.showMessageDialog(null, "Selecione um cliente na tabela.", "Aviso", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    String clienteSelecionado = model.getValueAt(selectedRow, 0).toString(); // Obtém o nome do cliente
+    double gastoTotal = 0.0;
+    double tempoTotal = 0.0;
+    StringBuilder locais = new StringBuilder();
+
+   for (int i = 0; i < model.getRowCount(); i++) {
+        String membro = model.getValueAt(i, 0).toString();
+        if (membro.equals(clienteSelecionado)) {
+            String gastoStr = model.getValueAt(i, 4).toString().replace("R$", "").trim();
+            gastoTotal += Double.parseDouble(gastoStr);
+            String tempoStr = model.getValueAt(i, 3).toString().replace(" Min", "").trim();
+            tempoTotal += Double.parseDouble(tempoStr);
+
+            String local = model.getValueAt(i, 2).toString();
+            if (!locais.toString().contains(local)) {
+                if (locais.length() > 0) {
+                    locais.append(", ");
+                }
+                locais.append(local);
+            }
+        }
+    }
+
+    String mensagem = "Resumo de Consumo para " + clienteSelecionado + ":\n" +
+                      "Valor gastado da Água: R$" + String.format("%.2f", gastoTotal) + "\n" +
+                      "Tempo Total de Uso: " + String.format("%.2f", tempoTotal) + " Min.\n" +                    
+                      "Locais Registrados: " + locais.toString();
+
+    JOptionPane.showMessageDialog(null, mensagem, "Resumo de Consumo", JOptionPane.INFORMATION_MESSAGE);
+
+    
+}
+
     public class calc extends javax.swing.JFrame {
 
         /**
@@ -274,8 +320,6 @@ public class calconsumo extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -325,6 +369,11 @@ public class calconsumo extends javax.swing.JFrame {
         jtlocal.setBounds(96, 130, 110, 30);
 
         jtuso.setText(" ");
+        jtuso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtusoActionPerformed(evt);
+            }
+        });
         jPanel1.add(jtuso);
         jtuso.setBounds(410, 70, 100, 30);
 
@@ -338,20 +387,20 @@ public class calconsumo extends javax.swing.JFrame {
 
         jLabel3.setText("Tempo de Uso (H):");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(310, 80, 90, 20);
+        jLabel3.setBounds(290, 80, 110, 20);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Membro", "Dispositivo", "Local", "Tempo de uso", "Gasto", "Gasto p/ Litro (L)"
+                "Membro", "Dispositivo", "Local", "Tempo de uso", "Gasto (R$)", "Uso p/ Litro (L)"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 230, 550, 93);
+        jScrollPane1.setBounds(10, 230, 590, 93);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Consulta de consumo por");
@@ -359,7 +408,7 @@ public class calconsumo extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(176, 11, 228, 22);
 
-        jbadicionar.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\9133514_signup_register_login_icon (1).png")); // NOI18N
+        jbadicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9133514_signup_register_login_icon (1).png"))); // NOI18N
         jbadicionar.setText("Registrar");
         jbadicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -388,7 +437,7 @@ public class calconsumo extends javax.swing.JFrame {
         jPanel1.add(jcregiao);
         jcregiao.setBounds(410, 100, 100, 20);
 
-        jBExcluir.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\10758949_x_icon.png")); // NOI18N
+        jBExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/10758949_x_icon.png"))); // NOI18N
         jBExcluir.setText("Excluir");
         jBExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -396,7 +445,7 @@ public class calconsumo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBExcluir);
-        jBExcluir.setBounds(310, 200, 100, 25);
+        jBExcluir.setBounds(140, 200, 100, 25);
 
         jLabel9.setText("Membro: ");
         jPanel1.add(jLabel9);
@@ -410,15 +459,15 @@ public class calconsumo extends javax.swing.JFrame {
         jPanel1.add(jcmembro);
         jcmembro.setBounds(96, 70, 110, 20);
 
-        jBAlterar.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\9068701_change_icon.png")); // NOI18N
-        jBAlterar.setText("EDITAR");
+        jBAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9068701_change_icon.png"))); // NOI18N
+        jBAlterar.setText("Editar");
         jBAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAlterarActionPerformed(evt);
             }
         });
         jPanel1.add(jBAlterar);
-        jBAlterar.setBounds(420, 200, 110, 25);
+        jBAlterar.setBounds(250, 200, 110, 25);
 
         jButton1.setText("Voltar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -429,24 +478,24 @@ public class calconsumo extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(20, 360, 61, 23);
 
-        jBSUPER.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\5975175_coronavirus_report_clipboard_medical_virus_icon.png")); // NOI18N
-        jBSUPER.setText("Gerar para Relatório");
+        jBSUPER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"))); // NOI18N
+        jBSUPER.setText("Gerar Relatório");
         jBSUPER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBSUPERActionPerformed(evt);
             }
         });
         jPanel1.add(jBSUPER);
-        jBSUPER.setBounds(140, 200, 160, 25);
+        jBSUPER.setBounds(370, 200, 130, 25);
 
-        jLFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Downloads\\Water Systems Earth Science Presentation in Blue White Illustrated Style.jpg")); // NOI18N
+        jLFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/1G.png"))); // NOI18N
         jPanel1.add(jLFundo);
-        jLFundo.setBounds(-60, -220, 800, 660);
+        jLFundo.setBounds(-60, -170, 800, 660);
 
         jMenu1.setText("Cadastro");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\9133514_signup_register_login_icon (1).png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9133514_signup_register_login_icon (1).png"))); // NOI18N
         jMenuItem1.setText("Cadastro de membros");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,7 +509,7 @@ public class calconsumo extends javax.swing.JFrame {
         jMenu2.setText("Consulta");
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\3045419_accounting_budget_calc_calculator_math_icon (1).png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/3045419_accounting_budget_calc_calculator_math_icon (1).png"))); // NOI18N
         jMenuItem2.setText("Consulta de consumo");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -471,28 +520,19 @@ public class calconsumo extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu4.setText("Relatórios");
+        jMenu4.setText("Relatório");
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\5975175_coronavirus_report_clipboard_medical_virus_icon.png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"))); // NOI18N
         jMenuItem3.setText("Relatórios");
         jMenu4.add(jMenuItem3);
 
         jMenuBar1.add(jMenu4);
 
-        jMenu3.setText("Metas");
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\290108_achievement_award_badge_medal_prize_icon.png")); // NOI18N
-        jMenuItem4.setText("Metas");
-        jMenu3.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu3);
-
         jMenu9.setText("Sobre");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ruan_a_alves\\Desktop\\ProjetoSustentabilidade\\icones\\4213426_about_description_help_info_information_icon.png")); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/4213426_about_description_help_info_information_icon.png"))); // NOI18N
         jMenuItem5.setText("Sobre");
         jMenu9.add(jMenuItem5);
 
@@ -542,7 +582,7 @@ public class calconsumo extends javax.swing.JFrame {
 
     private void jBSUPERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSUPERActionPerformed
         // TODO add your handling code here:
-        passar_info();
+        gerarelatorio();
     }//GEN-LAST:event_jBSUPERActionPerformed
 
     private void jcmembroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmembroActionPerformed
@@ -553,6 +593,10 @@ public class calconsumo extends javax.swing.JFrame {
         // TODO add your handling code here:
         new Cadastro().show();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jtusoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtusoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtusoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -609,14 +653,12 @@ public class calconsumo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

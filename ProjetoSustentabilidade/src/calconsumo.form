@@ -110,7 +110,7 @@
                   <KeyStroke key="Ctrl+1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\9133514_signup_register_login_icon (1).png"/>
+                  <Image iconType="3" name="/Imagens/9133514_signup_register_login_icon (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de membros"/>
               </Properties>
@@ -131,7 +131,7 @@
                   <KeyStroke key="Ctrl+2"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\3045419_accounting_budget_calc_calculator_math_icon (1).png"/>
+                  <Image iconType="3" name="/Imagens/3045419_accounting_budget_calc_calculator_math_icon (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Consulta de consumo"/>
               </Properties>
@@ -143,7 +143,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
@@ -152,27 +152,9 @@
                   <KeyStroke key="Ctrl+3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\5975175_coronavirus_report_clipboard_medical_virus_icon.png"/>
+                  <Image iconType="3" name="/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Metas"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
-              <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+4"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\290108_achievement_award_badge_medal_prize_icon.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Metas"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -188,7 +170,7 @@
                   <KeyStroke key="Ctrl+5"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\4213426_about_description_help_info_information_icon.png"/>
+                  <Image iconType="3" name="/Imagens/4213426_about_description_help_info_information_icon.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sobre"/>
               </Properties>
@@ -256,6 +238,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtusoActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="410" y="70" width="100" height="30"/>
@@ -288,7 +273,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="80" width="90" height="20"/>
+              <AbsoluteConstraints x="290" y="80" width="110" height="20"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -298,7 +283,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="230" width="550" height="93"/>
+              <AbsoluteConstraints x="10" y="230" width="590" height="93"/>
             </Constraint>
           </Constraints>
 
@@ -312,12 +297,17 @@
                     <Column editable="true" title="Dispositivo" type="java.lang.Object"/>
                     <Column editable="true" title="Local" type="java.lang.Object"/>
                     <Column editable="true" title="Tempo de uso" type="java.lang.Object"/>
-                    <Column editable="true" title="Gasto" type="java.lang.Object"/>
-                    <Column editable="true" title="Gasto p/ Litro (L)" type="java.lang.Object"/>
+                    <Column editable="true" title="Gasto (R$)" type="java.lang.Object"/>
+                    <Column editable="true" title="Uso p/ Litro (L)" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
@@ -369,7 +359,7 @@
         <Component class="javax.swing.JButton" name="jbadicionar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\9133514_signup_register_login_icon (1).png"/>
+              <Image iconType="3" name="/Imagens/9133514_signup_register_login_icon (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar"/>
           </Properties>
@@ -457,7 +447,7 @@
         <Component class="javax.swing.JButton" name="jBExcluir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\10758949_x_icon.png"/>
+              <Image iconType="3" name="/Imagens/10758949_x_icon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
@@ -466,7 +456,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="200" width="100" height="-1"/>
+              <AbsoluteConstraints x="140" y="200" width="100" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -501,16 +491,16 @@
         <Component class="javax.swing.JToggleButton" name="jBAlterar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\9068701_change_icon.png"/>
+              <Image iconType="3" name="/Imagens/9068701_change_icon.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="EDITAR"/>
+            <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBAlterarActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="420" y="200" width="110" height="-1"/>
+              <AbsoluteConstraints x="250" y="200" width="110" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -530,28 +520,28 @@
         <Component class="javax.swing.JButton" name="jBSUPER">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\5975175_coronavirus_report_clipboard_medical_virus_icon.png"/>
+              <Image iconType="3" name="/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Gerar para Relat&#xf3;rio"/>
+            <Property name="text" type="java.lang.String" value="Gerar Relat&#xf3;rio"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSUPERActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="140" y="200" width="160" height="-1"/>
+              <AbsoluteConstraints x="370" y="200" width="130" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLFundo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\ruan_a_alves\Downloads\Water Systems Earth Science Presentation in Blue White Illustrated Style.jpg"/>
+              <Image iconType="3" name="/Imagens/1G.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="-60" y="-220" width="800" height="660"/>
+              <AbsoluteConstraints x="-60" y="-170" width="800" height="660"/>
             </Constraint>
           </Constraints>
         </Component>

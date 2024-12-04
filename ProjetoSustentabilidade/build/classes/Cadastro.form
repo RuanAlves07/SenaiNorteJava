@@ -15,7 +15,7 @@
                   <KeyStroke key="Ctrl+1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\9133514_signup_register_login_icon (1).png"/>
+                  <Image iconType="3" name="/Imagens/9133514_signup_register_login_icon (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de membros"/>
               </Properties>
@@ -36,7 +36,7 @@
                   <KeyStroke key="Ctrl+2"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\3045419_accounting_budget_calc_calculator_math_icon (1).png"/>
+                  <Image iconType="3" name="/Imagens/3045419_accounting_budget_calc_calculator_math_icon (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Consulta de consumo"/>
               </Properties>
@@ -48,7 +48,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
@@ -57,33 +57,12 @@
                   <KeyStroke key="Ctrl+3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\5975175_coronavirus_report_clipboard_medical_virus_icon.png"/>
+                  <Image iconType="3" name="/Imagens/5975175_coronavirus_report_clipboard_medical_virus_icon.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Metas"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
-              <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+4"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\290108_achievement_award_badge_medal_prize_icon.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Metas"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -96,10 +75,10 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+5"/>
+                  <KeyStroke key="Ctrl+4"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\ruan_a_alves\Desktop\ProjetoSustentabilidade\icones\4213426_about_description_help_info_information_icon.png"/>
+                  <Image iconType="3" name="/Imagens/4213426_about_description_help_info_information_icon.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sobre"/>
               </Properties>
@@ -337,9 +316,8 @@
     <Component class="javax.swing.JLabel" name="jLFundo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\ruan_a_alves\Downloads\Water Systems Earth Science Presentation in Blue White Illustrated Style\1.png"/>
+          <Image iconType="3" name="/Imagens/1.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel6"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
