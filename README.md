@@ -36,3 +36,4 @@ Permite que o usuário veja quanto cada usuário consumiu em uma janela de tempo
 
 
 📄  Licença Este projeto está licenciado sob a licença MIT.
+
